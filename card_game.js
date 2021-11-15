@@ -118,7 +118,7 @@ $("#p_1").on("click", function () {
         }
         cardValue();
         scoreCount();
-    }, 1200);
+    }, 1500);
 
 });
     
