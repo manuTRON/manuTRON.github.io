@@ -42,6 +42,8 @@ function resetGame() {
 
     document.getElementById("s2").value = "";
     document.getElementById("s1").value = "";
+    document.getElementById("s1").style.color = "";
+    document.getElementById("s2").style.color = "";
 }
 
 function winner() {
