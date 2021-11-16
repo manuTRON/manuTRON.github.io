@@ -34,6 +34,23 @@
             /*animation-duration: 3s;
                 animation-name: slidein;*/
         }
+        .scr{
+            font-size: 15px;
+            font-weight: bolder;
+            border: 0px;
+        }
+        .scr:focus{
+            outline: none;
+        }
+        .pl_name:focus{
+            outline: none;
+        }
+        .pl_name{
+            font-size: 20px;
+            font-weight: bolder;
+            text-align: center;
+            border: 0px;
+        }
     </style>
 </head>
 
@@ -50,27 +67,27 @@
             </tr>
             <tr>
                 <th>
-                    <input type="text" value="Player 1" id="p1_name">
+                    <input type="text" value="Player 1" class="pl_name" id="p1_name">
                     <p></p>
-                    Score : <input id="s1" type="text" style="width: 20px;" value="0" readonly>
+                    <input id="s1" type="text" style="text-align: center;" placeholder="points" class="scr" readonly>
                 </th>
                 <th>
-                    <input type="text" value="Player 2" id="p2_name">
+                    <input type="text" value="Player 2" class="pl_name" id="p2_name">
                     <p></p>
-                    Score : <input id="s2" type="text" style="width: 20px;" value="0" readonly>
+                    <input id="s2" type="text" style="text-align: center;" placeholder="points" class="scr" readonly>
                 </th>
             </tr>
             <tr>
-                <td>
+                <th>
                     <canvas id="myCanvas1" width="240" height="320">
                         Your browser does not support the HTML5 canvas tag.
                     </canvas>
-                </td>
-                <td>
+                </th>
+                <th>
                     <canvas id="myCanvas2" width="240" height="320">
                         Your browser does not support the HTML5 canvas tag.
                     </canvas>
-                </td>
+                </th>
             </tr>
             <tr>
                 <th colspan="2">
