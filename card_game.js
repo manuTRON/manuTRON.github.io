@@ -39,6 +39,9 @@ function resetGame() {
     ctx2.font = "30px Arial";
     ctx2.textAlign = "center";
     ctx2.strokeText("Player 2", 120, 160);
+
+    document.getElementById("s2").value = "";
+    document.getElementById("s1").value = "";
 }
 
 function winner() {
@@ -70,10 +73,12 @@ function scoreCount(){
     if (parseInt(c1_value) > parseInt(c2_value)) {
         score1 = score1 + 1;
         $("#s1").val(score1);
-
+        $("#s2").val(score2);
+        
     }
     else if (parseInt(c1_value) < parseInt(c2_value)) {
         score2 = score2 + 1;
+        $("#s1").val(score1);
         $("#s2").val(score2);
 
     }
@@ -82,6 +87,18 @@ function scoreCount(){
         score2 = score2 + 1;
         $("#s2").val(score2);
         $("#s1").val(score1);
+    }
+    if(score1>score2){
+        document.getElementById("s1").style.color = "#20c20e";
+        document.getElementById("s2").style.color = "red";
+    }
+    if(score2>score1){
+        document.getElementById("s2").style.color = "#20c20e";
+        document.getElementById("s1").style.color = "red";
+    }
+    if(score2==score1){
+        document.getElementById("s2").style.color = "#20c20e";
+        document.getElementById("s1").style.color = "#20c20e";
     }
 }
 
@@ -108,7 +125,7 @@ $("#p_1").on("click", function () {
         card2.src = JSON.parse(xhr2.responseText).cards[0].image;
     }
     xhr2.send();
-
+    
     setTimeout(() => {
         ctx.drawImage(card1, 4, 3);
         ctx2.drawImage(card2, 4, 3);
@@ -118,7 +135,7 @@ $("#p_1").on("click", function () {
         }
         cardValue();
         scoreCount();
-    }, 1500);
+    }, 1200);
 
 });
     
